@@ -1,0 +1,152 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-clr: #207561;
+  --bg-light: #f8f9fa;
+  --bg-dark: #343a40;
+  --text-dark: #000;
+  --text-light: #666666;
+
+  --white-clr: #fff;
+  --font-primary: "Arbutus Slab", serif;
+  --font-secondary: "Peddana", serif;
+
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 992px;
+  --breakpoint-xl: 1200px;
+
+  --contaniner-max-width: 1140px;
+  --container-width: 88%;
+
+  --fs-h1: 2.55rem;
+  --fs-h2: 1.85rem;
+  --fs-h3: 1.25rem;
+  --fs-body: 1rem;
+}
+
+/* GENERAL STYLING START */
+
+html {
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: gainsboro var(--text-light);
+}
+
+html::-webkit-scrollbar {
+  width: 2vw;
+  max-width: 10px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: gainsboro;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: var(--text-light);
+}
+
+body {
+  margin: 0;
+  font-size: var(--fs-body);
+  font-family: var(--font-primary);
+  line-height: 1.55;
+  color: var(--text-light);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+.container {
+  max-width: var(--contaniner-max-width);
+  width: var(--container-width);
+  margin: 0 auto;
+}
+
+header .container {
+  max-width: calc(var(--contaniner-max-width) / 1.35);
+}
+
+.btn {
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  color: var(--white-clr);
+  border-radius: 2em;
+  background-color: var(--primary-clr);
+  padding: 0.8em 2.5em;
+  transition: 0.4s ease-in-out;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: var(--text-dark);
+  box-shadow: 0 5px 10px var(--bg-dark);
+}
+.flex {
+  display: flex;
+}
+.grid {
+  display: grid;
+}
+
+/* TYPOGRAPHY START */
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: var(--fs-h1);
+}
+
+h2 {
+  font-size: var(--fs-h2);
+}
+
+h3 {
+  font-size: var(--fs-h3);
+}
+
+.section-title {
+  color: var(--text-dark);
+}
+
+.section-subtitle {
+  color: var(--text-dark);
+  font-weight: normal;
+}
+
+.section-title-underline {
+  position: relative;
+  padding-bottom: 0.7em;
+  display: inline-block;
+}
+
+.section-title-underline::after {
+  content: "";
+  position: absolute;
+  bottom: -0.05em;
+  width: 70%;
+  height: 2px;
+  left: 15%;
+  background-color: var(--text-light);
+  opacity: 0.4;
+}
+
+@media (min-width: var(--breakpoint-md)) {
+  :root {
+    --fs-h1: 2.8rem;
+    --fs-h2: 2.05rem;
+    --fs-h3: 1.35rem;
+    --fs-body: 1.08rem;
+  }
+}
